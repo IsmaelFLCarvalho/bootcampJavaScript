@@ -9,7 +9,7 @@ let consumoVeiculoNaEstrada = 15.9; //insira o consumo médio do seu veículo na
 let distanciaTotalDaViagemEmKm = 41; //insira quantos Km totais irá percorrer.
 let distanciaParcialNaCidade = distanciaTotalDaViagemEmKm - 29; //insira quantos km fará dentro da estrada.
 let distanciaParcialNaEstrada = distanciaTotalDaViagemEmKm - 12; //insira quantos km fará dentro da cidade.
-let tipoDeCombustivel = "Gpl"; //digite o tipo de combustível que abasteceu ( Gasóleo, Gasolina ou GPL. ).
+let tipoDeCombustivel = "Gpl"; //digite o tipo de combustível que abasteceu ( Gasóleo, §Gasolina ou GPL. ).
 let valorCombustivel; //variável para receber o combustível. 
 
 //constante para calcular quantos litros de gasoleo será gasto no percurso.
