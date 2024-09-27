@@ -8,22 +8,26 @@
             - Acima de duas vezes preço normal mais acrécimo de juros de 10%.
 */
 
-const valorProdutoLoja1 = 15.00;
-const tipoDePagamento = 'MBway';
-const pgtoDebito = valorProdutoLoja1 - (valorProdutoLoja1 * 0.10);
-const pgtoMbayEDinheiro = valorProdutoLoja1 - (valorProdutoLoja1 * 0.15);
-const pgtoComAcrescimo = valorProdutoLoja1 * 1.15;
-
-if (tipoDePagamento === 'debito'){
-    console.log(`Pagamento em débito. Valor à pagar do produto com desconto de 10% é de ${pgtoDebito.toFixed(2)}.`);
-} else if (tipoDePagamento === 'MBway' || tipoDePagamento === 'dinheiro'){
-
-    console.log(`Pagamento por MBway. Valor à pagar do produto com desconto de 15% é de ${pgtoMbayEDinheiro.toFixed(2)}.`);
-
-} else if (tipoDePagamento === '2x'){
-    console.log(`Pagamento em 2 vezes. Valor à pagar é de ${valorProdutoLoja1.toFixed(2)}.`);
-
-} else {
-    console.log(`Pagamento em ${tipoDePagamento}. O produto terá um acréscimo de 15%. O valor total a pagar é de ${pgtoComAcrescimo.toFixed(2)}.`);
-
+function calcularValorFinal (valorProduto, condicaoDePagamento){
+    let valorFinal;
+    
+    if (condicaoDePagamento === "debito"){
+        valorFinal = valorProduto * 0.90; // 10% de desconto
+        console.log(`Pagamento em débito. Valor com 10% de desconto: €${valorFinal.toFixed(2)}`);
+    } else if (condicaoDePagamento === "MBway" || condicaoDePagamento === "dinheiro"){
+        valorFinal = valorProduto * 0.85; //15% de desconto
+        console.log(`Pagamento em ${condicaoDePagamento}. Valor com 15% de desconto: €${valorFinal.toFixed(2)}`);
+    } else if (condicaoDePagamento === "2x"){
+        valorFinal = valorProduto; //Preço sem desconto por ser parcelado
+        console.log(`Pagamento parcelado em 2 vezes. Valor do produto é total e sem descontos: €${valorFinal.toFixed(2)}`);
+    } else {
+        const parcelas = parseInt (condicaoDePagamento); //converte a condição de parcela para um número
+        if (parcelas >2) {
+            valorFinal = valorProduto * 1.10; //acrécimo de 10%.
+            console.log(`Pagamento em ${parcelas}. Valor do produto acrescerá um montante de 10%, com o valor final de : €${valorFinal.toFixed(2)}`);
+        }
+    }
+    return valorFinal;
 }
+
+calcularValorFinal(100, 'MBway');
