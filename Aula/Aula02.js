@@ -32,7 +32,7 @@ console.log(verificaMaioridade(31));  // Exibe "É maior de idade"
 console.log(verificaMaioridade(13));  // Exibe "É menor de idade"
 
 
-//outra forma de verificar idade.
+//outra forma de verificar idade.   
 function verifiqueSeMaiorIdade(idade){
     if (idade<18){
         console.log("É menor de idade");
